@@ -21,6 +21,10 @@ class Route
 
         header('Location: ' . $url . $path);
     }
+
+    public static function refresh() {
+        self::redirect(self::currentPath());
+    }
     
     public static function get404(mixed $callback, array $middleware = []) {
         self::addRoute('GET', 'error_404', $callback, $middleware);
