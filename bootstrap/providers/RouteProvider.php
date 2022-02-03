@@ -39,8 +39,8 @@ class RouteProvider {
         if(!empty($route['middleware'])){
             foreach($route['middleware'] as $name){
                 $middleware = MiddlewareProvider::findMiddleware($name);
-
-                if(!$middleware->validate()){
+                
+                if($middleware != null && !$middleware->validate()){
                     echo $middleware->name() . " not validated";
                     return;
                 }

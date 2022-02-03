@@ -22,7 +22,7 @@ class Mail {
 		$mail->addAddress($to);
 	        
 		$response = $mail->Send();
-		if(!$response || $response == null) {
+		if($response == null || !$response) {
 	        return 'Mail error: '.$mail->ErrorInfo; 
 		}
 

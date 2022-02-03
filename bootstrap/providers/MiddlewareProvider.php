@@ -4,7 +4,7 @@ use bootstrap\models\Middleware;
 
 class MiddlewareProvider {
 
-    public static function findMiddleware(string $name) : Middleware {
+    public static function findMiddleware(string $name) : Middleware | null {
         require_once "..\bootstrap\models\Middleware.php";
 
         foreach(scandir("../app/middlewares") as $value) {

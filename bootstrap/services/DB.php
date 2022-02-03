@@ -20,7 +20,7 @@ class DB {
         self::loadMigrations();
     }
     
-    public static function table(string $table) : Table {
+    public static function table(string $table) : Table|null {
         if(is_null(self::$builder))
             return null;
             
