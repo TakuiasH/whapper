@@ -1,6 +1,4 @@
-<?php
-
-namespace bootstrap\services;
+<?php namespace bootstrap\services;
 
 use bootstrap\models\Migration;
 use ClanCats\Hydrahon\Builder;
@@ -62,8 +60,8 @@ class DB {
         foreach(scandir("..\database") as $value) {
             if(str_ends_with($value, ".migration.php")){
                 include "..\database\\".$value;
-                
-                $instance = new (str_replace(".migration.php", "", $value));
+                $class = str_replace(".migration.php", "", $value);
+                $instance = new $class;
                 if($instance instanceof Migration){
                     self::$migrations = array_merge(self::$migrations, [$instance]);
                 }

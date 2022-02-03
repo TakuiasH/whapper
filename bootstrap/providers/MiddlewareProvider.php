@@ -10,8 +10,8 @@ class MiddlewareProvider {
         foreach(scandir("../app/middlewares") as $value) {
             if(str_ends_with($value, ".php")){
                 require_once "..\app\middlewares\\".$value;
-
-                $instance = new (str_replace(".php", "", $value))();
+                $class = str_replace(".php", "", $value);
+                $instance = new $class;
                 if($instance instanceof Middleware)
                     if($instance->name() === $name)
                         return $instance;

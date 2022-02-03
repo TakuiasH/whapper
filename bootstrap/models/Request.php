@@ -20,6 +20,6 @@ class Request {
     public function method() : string { return $this->method; }
     public function current_path() : string { return $this->current_path; }
 
-    public function has_get() : bool { return !empty($get); }
-    public function has_post() : bool { return !empty($post); }
+    public function has_get() : bool { return !empty($this->get); }
+    public function has_post() : bool { return !empty($this->post); }
 }

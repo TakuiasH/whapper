@@ -1,6 +1,5 @@
 <?php
 
-use app\services\AuthenticationService;
 use bootstrap\services\Route;
 
 Route::get("auth/login", "auth.LoginController@index", ['auth']);

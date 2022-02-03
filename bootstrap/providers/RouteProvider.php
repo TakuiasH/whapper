@@ -14,7 +14,7 @@ class RouteProvider {
         require_once '../routes/web.php';
     }
     
-    function __construct() {
+    public function __construct() {
         require_once 'ViewProvider.php';
         
         $this->loadRoutes();

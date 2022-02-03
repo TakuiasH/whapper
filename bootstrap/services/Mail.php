@@ -21,8 +21,9 @@ class Mail {
 		$mail->msgHTML($body);
 		$mail->addAddress($to);
 	        
-		if(!$mail->Send()) {
-	            return 'Mail error: '.$mail->ErrorInfo; 
+		$response = $mail->Send();
+		if(!$response || $response == null) {
+	        return 'Mail error: '.$mail->ErrorInfo; 
 		}
 
     }

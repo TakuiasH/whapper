@@ -1,4 +1,4 @@
 <?php
     return[ 
-        "hello" => "Hello, " . Auth::user()->username . "!", 
+        "hello" => "Hello, " . \Auth::user()->username . "!", 
     ];

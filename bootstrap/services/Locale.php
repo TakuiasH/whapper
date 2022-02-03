@@ -1,7 +1,5 @@
 <?php namespace bootstrap\services;
 
-use Auth;
-
 class Locale {
     
     public static string $ENGLISH = 'en';
