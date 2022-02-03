@@ -6,7 +6,7 @@ use bootstrap\services\Locale;
 
 class Kernel {
         
-    function __construct() {     
+    public function __construct() {     
         ini_set('display_errors', 'On');
 
         require_once("..\app\models\Auth.php");
