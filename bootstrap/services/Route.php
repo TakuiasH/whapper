@@ -14,6 +14,9 @@ class Route
     }
     
     public static function redirect($path) {
+	if($path == self::currentPath())
+            return;
+	    
         $url = app['url'];
         if(!str_ends_with($url, "/")) $url = $url."/";
         
