@@ -55,11 +55,11 @@ class DB {
     }
 
     private static function loadMigrations() {
-        require_once "..\bootstrap\models\Migration.php";
+        require_once "../bootstrap/models/Migration.php";
 
-        foreach(scandir("..\database") as $value) {
+        foreach(scandir("../database") as $value) {
             if(str_ends_with($value, ".migration.php")){
-                include "..\database\\".$value;
+                include "../database/".$value;
                 $class = str_replace(".migration.php", "", $value);
                 $instance = new $class;
                 if($instance instanceof Migration){

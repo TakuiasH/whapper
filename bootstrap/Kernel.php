@@ -9,7 +9,7 @@ class Kernel {
     public function __construct() {     
         ini_set('display_errors', 'On');
 
-        require_once("..\app\models\Auth.php");
+        require_once("../app/models/Auth.php");
 
         session_start();
                 

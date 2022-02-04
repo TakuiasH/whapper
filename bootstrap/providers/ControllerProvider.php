@@ -8,7 +8,7 @@ use bootstrap\models\Request;
 class ControllerProvider {
 	
     public static function startController(string $path, Request $request) {
-        require_once "..\bootstrap\models\Controller.php";
+        require_once "../bootstrap/models/Controller.php";
 
         $executeParts = explode('@', $path);
         $parts = explode('.', $executeParts[0]);
@@ -18,7 +18,7 @@ class ControllerProvider {
         $class = $parts[sizeof($parts) -1];
         $function = $executeParts[1];
         
-        require_once '../app/Controllers/'.$filePath.'.php';
+        require_once '../app/controllers/'.$filePath.'.php';
         
         $instance = new $class;
         if($instance instanceof Controller)
